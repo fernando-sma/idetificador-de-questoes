@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script src="texto.js"></script>
+    <script src="util.js"></script>
+    <script>
+      questaoInicial = 16;
+      questaoFinal = 20;
+      questoes = new Array();
+
+      for (j = 0; j <= questaoFinal - questaoInicial; j++) {
+        item = [];
+
+        var questao = cortar(
+          texto,
+          j + questaoInicial + ". ",
+          j + questaoInicial + 1 + ". "
+        );
+        pergunta = cortar(questao, 0, "A) ");
+
+        for (i = 0; i <= 3; i++) {
+          item[i] = cortar(
+            questao,
+            letrasMaiusculas[i] + ") ",
+            letrasMaiusculas[i + 1] + ")"
+          );
+        }
+        item[4] = questao.substring(questao.indexOf("E)") + 3, questao.length);
+
+        questoes.push(
+          new Array(pergunta, item[0], item[1], item[2], item[3], item[4])
+        );
+      }
+      console.log(questoes);
+    </script>
+  </body>
+</html>
