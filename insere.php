@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "root";
-    $dbname = "manchu";
+    $dbname = "teste";
 
     $a = $_POST['teste'];
 
